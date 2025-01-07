@@ -2,20 +2,19 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "yourdockerhubusername/yourimagename"
+        DOCKER_IMAGE = "jna123/jenkins/jenkins"
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/your-repo.git'
+                git branch: 'main', url: 'https://github.com/jna-123/jenkins-docker-integration.git'
             }
         }
 
         stage('Build Application') {
             steps {
                 echo 'Building the application...'
-                // Add build commands here, e.g., `mvn clean package` for Java
             }
         }
 
